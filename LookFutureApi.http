@@ -1,0 +1,21 @@
+@LookFutureApi_HostAddress = http://localhost:5000
+
+### Health Check
+GET {{LookFutureApi_HostAddress}}/
+Accept: text/html
+
+### Analyze Idea (E2E Test Scenario)
+POST {{LookFutureApi_HostAddress}}/api/ideas/analyze
+Content-Type: application/json
+
+{
+  "raw_description": "AI-powered inventory forecasting SaaS for local bakeries",
+  "category": "B2B SaaS",
+  "region": "North America"
+}
+
+### Get History
+GET {{LookFutureApi_HostAddress}}/api/ideas/history?limit=20
+Accept: application/json
+
+###
